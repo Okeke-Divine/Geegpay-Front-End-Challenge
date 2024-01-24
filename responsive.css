@@ -1,5 +1,6 @@
 @media(max-width: 1235px){
-	html,body{
-		display: none;
+	.account_badge_cont .acc_details,
+	.account_badge_cont .expand_button{
+/*		display: none;*/
 	}
 }
