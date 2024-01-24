@@ -1,7 +1,7 @@
 :root{
     --sidebar-width: 80px;
     --font-color-main:black;
-    --font-color-light: grey;
+    --font-color-light: rgb(120,116,134);
     --background-color: #eee;
     --sidebar-color: rgb(247,248,250);
     --border-color: rgba(0,0,0,0.1);
@@ -12,10 +12,15 @@
 html,body{
     margin:0;
     padding: 0;
+    overflow: hidden;
 }
 
 .text_bold{
-    color: var(--col-black);
+    color: var(--font-color-main);
+}
+
+.text_light{
+    color: var(--font-color-light);
 }
 
 .sidebar{
@@ -30,6 +35,8 @@ html,body{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
     justify-content: space-between;
 }
 
@@ -138,12 +145,39 @@ main.container{
     height: 35px;
 }
 
-.account_badge > div{
+.account_badge_cont{
     display: flex;
-    width: 100%;
+    width: fit-content;
+    column-gap: 10px;
+    border-radius: 30px;
+    padding: 5px 2px 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
 }
 
-.account_badge > div > div {
-    background: pink;
-    border:1px solid red;
+.user_image{
+    width: 50px;
+}
+
+.account_badge_cont .user_frame{
+    display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
