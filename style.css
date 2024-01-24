@@ -87,6 +87,7 @@ main.container{
     border-bottom: 1px solid var(--border-color);
     padding: 15px 25px;
     box-sizing: border-box;
+    transition: var(--transition-duration);
 }
 
 .navbar .dashboard_name{
@@ -114,6 +115,7 @@ main.container{
 .search_box input.search_bar_input{
     border:none;
     width: 200px;
+    transition: var(--transition-duration);
 }
 .search_bar_input:focus, .search_bar_input:active {
     outline: none;
@@ -160,7 +162,7 @@ main.container{
 }
 
 .account_badge_cont .user_frame{
-    display: flex;
+/*    display: flex;*/
 }
 
 ::-webkit-scrollbar {
@@ -180,4 +182,21 @@ main.container{
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.sidebar_visibility_toggle{
+    position: fixed;
+    bottom:10px;
+    left: 10px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    display: none;
+    border: 1px solid var(--border-color);
+    width: 35px;
+    height: 35px;
+}
+
+.sidebar_visibility_toggle svg{
+    width: 30px;
 }
