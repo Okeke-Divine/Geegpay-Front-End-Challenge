@@ -137,3 +137,13 @@ main.container{
     width: 35px;
     height: 35px;
 }
+
+.account_badge > div{
+    display: flex;
+    width: 100%;
+}
+
+.account_badge > div > div {
+    background: pink;
+    border:1px solid red;
+}
