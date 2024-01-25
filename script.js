@@ -1,11 +1,11 @@
-function generateInvoice(){
+function generateInvoice(name,invoiceDate,status, item, quantity, unitPrice, totalAmount){
  // Sample data for the invoice
     const invoiceData = {
-        name: 'John Doe',
+        name: name,
         address: '123 Main St, Cityville, State',
-        invoiceDate: '2024-01-25',
-        status: 'Paid',
-        totalAmount: 500.00
+        invoiceDate: invoiceDate,
+        status: status,
+        totalAmount: totalAmount
     };
 
     // Generate a custom SweetAlert modal for the invoice
@@ -33,10 +33,10 @@ function generateInvoice(){
                                 <th>Total</th>
                             </tr>
                             <tr>
-                                <td>Item 1</td>
-                                <td>3</td>
-                                <td>$15.00</td>
-                                <td>$45.00</td>
+                                <td>${item}</td>
+                                <td>${quantity}</td>
+                                <td>${unitPrice}</td>
+                                <td>${totalAmount}</td>
                             </tr>
                         </table>
 
@@ -49,12 +49,12 @@ function generateInvoice(){
             `<div style="display:flex;justify-content: space-between;">
               <div>
                 <button class="btn btn-secondary" onclick="printInvoice()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <path d="M18 8h-4v4h-4v-4h-4v-4h4V8h4v4h4v4z" fill="currentColor"/>
-</svg></button>
+                  <path d="M18 8h-4v4h-4v-4h-4v-4h4V8h4v4h4v4z" fill="currentColor"/>
+                </svg></button>
                 <a class="btn btn-primary" href="#" onclick="downloadInvoice()">Download</a>
               </div>
               <div>
-                <span class="total-amount"><strong>Total: $${invoiceData.totalAmount.toFixed(2)}</strong></span>
+                <span class="total-amount"><strong>Total: ${invoiceData.totalAmount}</strong></span>
               </div>
             </div>`
     });

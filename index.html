@@ -412,7 +412,7 @@
                                                     fill="#292D32" />
                                             </svg>
                                         </div>
-                                        <div class="view_text text_def cur_pointer" onclick="generateInvoice();">View</div>
+                                        <div class="view_text text_def cur_pointer" onclick="generateInvoice('Marcus Bergson','Marcus Bergson','<sapn class=`text_primary`>Paid</span>', 'Dell Laptop', 2, '$500.00', '$1000.00');">View</div>
                                     </div>
                                 </td>
                             </tr>
@@ -887,7 +887,6 @@
                         maxTicksLimit: 7, // Set the maximum number of ticks
                         stepSize: 10000, // Set the step size between ticks
                         callback: function (value, index, values) {
-                            console.log(value);
                             return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
                         }
                     },
