@@ -18,7 +18,7 @@
   --transition-duration: 0.5s;
   --col-black: black;
   --svg-fill: #b2abab;
-  --svg-fill-2: #0d062d;
+  --svg-fill-2: #b2abab;
   --hover-col-1: rgba(0, 0, 0, 0.1);
 }
 
@@ -66,6 +66,10 @@ body {
 
 .svg_def_global {
   fill: var(--svg-fill) !important;
+}
+
+.svg_def_global2{
+  fill: var(--background-color);
 }
 
 .link_component svg path {

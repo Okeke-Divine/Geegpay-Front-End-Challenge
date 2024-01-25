@@ -150,13 +150,13 @@
                 <div class="theme_toggle_container">
                     <div
                         class="link_component theme_toggle_button theme_light justify_center cur_pointer theme_toggle_button_active">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="30" height="30" rx="15" />
-                            <g clip-path="url(#clip0_1826_462)">
-                                <path
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg_def_global2">
+                            <rect width="30" height="30" rx="15" class="svg_def_global2" />
+                            <g clip-path="url(#clip0_1826_462)" class="svg_def_global2">
+                                <path class="svg_def_global2"
                                     d="M15 19.2188C17.33 19.2188 19.2188 17.33 19.2188 15C19.2188 12.67 17.33 10.7812 15 10.7812C12.67 10.7812 10.7812 12.67 10.7812 15C10.7812 17.33 12.67 19.2188 15 19.2188Z"
                                     fill="white" />
-                                <path
+                                <path class="svg_def_global2"
                                     d="M15 9.09345C14.5336 9.09345 14.1562 8.71564 14.1562 8.2497V7.40625C14.1562 6.94031 14.5336 6.5625 15 6.5625C15.4664 6.5625 15.8438 6.94031 15.8438 7.40625V8.2497C15.8438 8.71564 15.4664 9.09345 15 9.09345Z"
                                     fill="white" />
                                 <path
@@ -295,7 +295,7 @@
                 <div class="date_nd_icon justify_center">
                     <div class="date justify_center">
                         <div class="icon cur_pointer">
-                            <svg width="18" class="svg_def_global" height="18" viewBox="0 0 18 18" fill=""
+                            <svg width="18" class="svg_def_global2" height="18" viewBox="0 0 18 18" fill=""
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M1 8.79483C1 5.70067 1 4.15318 1.9376 3.19236C2.8744 2.23071 4.3832 2.23071 7.4 2.23071H10.6C13.6168 2.23071 15.1256 2.23071 16.0624 3.19236C17 4.15318 17 5.70067 17 8.79483V10.4359C17 13.53 17 15.0775 16.0624 16.0383C15.1256 17 13.6168 17 10.6 17H7.4C4.3832 17 2.8744 17 1.9376 16.0383C1 15.0775 1 13.53 1 10.4359V8.79483Z"
@@ -884,9 +884,10 @@
                 y: {
                 beginAtZero: true,
                     ticks: {
-                        // maxTicksLimit: 6, // Set the maximum number of ticks
-                        // stepSize: 10000, // Set the step size between ticks
+                        maxTicksLimit: 7, // Set the maximum number of ticks
+                        stepSize: 10000, // Set the step size between ticks
                         callback: function (value, index, values) {
+                            console.log(value);
                             return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
                         }
                     },
