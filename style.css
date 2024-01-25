@@ -433,6 +433,7 @@ main.container {
 .above .a-row {
   display: grid;
   grid-template-columns: 50% 50%;
+  column-gap: 10px;
 }
 
 table {
@@ -492,7 +493,7 @@ tr {
   line-height: 26px;
   letter-spacing: 0em;
   text-align: left;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .aMain {
@@ -502,4 +503,29 @@ tr {
   line-height: 32px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 6px;
+}
+
+.aFooter {
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aBadge-1 .bagde_text {
+  font-family: Plus Jakarta Sans;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.aBadge-1 {
+  padding: 4px 8px;
+  border-radius: 1000px;
+  gap: 4px;
+  background: #34CAA51F;
+  box-sizing: border-box;
+  color: var(--theme-col-primary);
 }
