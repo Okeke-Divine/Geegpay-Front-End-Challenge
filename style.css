@@ -434,6 +434,11 @@ main.container {
   display: grid;
   grid-template-columns: 50% 50%;
   column-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.above .a-row:last-child{
+    margin-bottom: 0px;
 }
 
 table {
@@ -515,7 +520,7 @@ tr {
 .aBadge-1 .bagde_text {
   font-family: Plus Jakarta Sans;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 530;
   line-height: 16px;
   letter-spacing: 0em;
   text-align: left;
@@ -527,5 +532,8 @@ tr {
   gap: 4px;
   background: #34CAA51F;
   box-sizing: border-box;
-  color: var(--theme-col-primary);
+}
+
+.aBadge-danger{
+    background: #ED544E1F!important;
 }
