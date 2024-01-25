@@ -883,24 +883,22 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    min: 0,
-                    max: 50000,
                     suggestedMax: 50000,
                     ticks: {
                         callback: function (value, index, values) {
-                            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); // Add commas to y-axis values
+                            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
                         }
                     }
                 }
             },
             plugins: {
                 legend: {
-                    display: true,
+                    display: false,
                 }
             },
             elements: {
                 bar: {
-                    borderRadius: 40, // Set the border radius for bars
+                    borderRadius: 40, 
                 }
             },
             layout: {
@@ -914,13 +912,25 @@
             scales: {
                 x: {
                     grid: {
-                        display: false, // Hide the horizontal lines (grid lines) on the X-axis
+                        display: false,
                     }
                 },
                 y: {
                     grid: {
-                        color: 'rgba(239, 239, 240, 0.9)', // Set the color and opacity of X-axis grid lines
+                        color: 'rgba(239, 239, 240, 0.9)', 
                         display: true,
+                    }
+                }
+            },
+            tooltips: {
+                mode: 'nearest',
+                intersect: false,
+                backgroundColor: '#34caa5',
+                titleFontColor: '#ffffff',
+                bodyFontColor: '#ffffff',
+                callbacks: {
+                    label: function (tooltipItem) {
+                        return '$' + tooltipItem.formattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
                     }
                 }
             }
