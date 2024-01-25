@@ -892,13 +892,28 @@
                 }
             },
             plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                            }
+                            return label;
+                        }
+                    }
+                },
                 legend: {
                     display: false,
                 }
             },
             elements: {
                 bar: {
-                    borderRadius: 40, 
+                    borderRadius: 40,
                 }
             },
             layout: {
@@ -917,23 +932,11 @@
                 },
                 y: {
                     grid: {
-                        color: 'rgba(239, 239, 240, 0.9)', 
+                        color: 'rgba(239, 239, 240, 0.9)',
                         display: true,
                     }
                 }
             },
-            tooltips: {
-                mode: 'nearest',
-                intersect: false,
-                backgroundColor: '#34caa5',
-                titleFontColor: '#ffffff',
-                bodyFontColor: '#ffffff',
-                callbacks: {
-                    label: function (tooltipItem) {
-                        return '$' + tooltipItem.formattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                    }
-                }
-            }
         }
     });
 </script>
