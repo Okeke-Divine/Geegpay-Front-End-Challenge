@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Geegpay-Front-End-Challenge | Built by Okeke Divine-Vessel</title>
 </head>
 
@@ -341,7 +342,7 @@
         <div class="other_content">
             <div class="left">
                 <div class="sales_trend">
-                     <div class="pCard-header">
+                    <div class="pCard-header">
                         <div class="start">
                             <div class="pCard-title text-1 justify_center">Sales Trend</div>
                         </div>
@@ -351,6 +352,9 @@
                                 <div class="sort_by_dropdown"></div>
                             </div>
                         </div>
+                    </div>
+                    <div class="pCard-body">
+                        <canvas id="myChart"></canvas>
                     </div>
                 </div>
                 <div class="last_orders">
@@ -609,8 +613,8 @@
                             <div class="aFooter">
                                 <div>
                                     <div class="aBadge-1 justify_center">
-                                        <div class="svg_cont justify_center"><svg width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                        <div class="svg_cont justify_center"><svg width="10" height="6"
+                                                viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M0.5 5.5L3.5 2.5L5.5 4.5L9.5 0.5" stroke="#34CAA5"
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                                 <path d="M6 0.5H9.5V4" stroke="#34CAA5" stroke-linecap="round"
@@ -655,8 +659,8 @@
                             <div class="aFooter">
                                 <div>
                                     <div class="aBadge-1 aBadge-danger justify_center">
-                                        <div class="svg_cont justify_center "><svg width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                        <div class="svg_cont justify_center "><svg width="10" height="6"
+                                                viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M0.5 0.5L3.5 3.5L5.5 1.5L9.5 5.5" stroke="#ED544E"
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                                 <path d="M6 5.5H9.5V2" stroke="#ED544E" stroke-linecap="round"
@@ -675,12 +679,21 @@
                             <div class="aHeader">
                                 <div>
                                     <div class="svg_container justify_center">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M16.25 22.5C17.2165 22.5 18 21.7165 18 20.75C18 19.7835 17.2165 19 16.25 19C15.2835 19 14.5 19.7835 14.5 20.75C14.5 21.7165 15.2835 22.5 16.25 22.5Z" fill="#34CAA5"/>
-                                            <path d="M8.25 22.5C9.2165 22.5 10 21.7165 10 20.75C10 19.7835 9.2165 19 8.25 19C7.2835 19 6.5 19.7835 6.5 20.75C6.5 21.7165 7.2835 22.5 8.25 22.5Z" fill="#34CAA5"/>
-                                            <path opacity="0.4" d="M4.84 3.94L4.64 6.39C4.6 6.86 4.97 7.25 5.44 7.25H20.75C21.17 7.25 21.52 6.92999 21.55 6.50999C21.68 4.73999 20.33 3.3 18.56 3.3H6.28999C6.18999 2.86 5.98999 2.44 5.67999 2.09C5.18999 1.56 4.49 1.25 3.77 1.25H2C1.59 1.25 1.25 1.59 1.25 2C1.25 2.41 1.59 2.75 2 2.75H3.74001C4.05001 2.75 4.34 2.88001 4.55 3.10001C4.76 3.33001 4.86 3.63 4.84 3.94Z" fill="#34CAA5"/>
-                                            <path d="M20.5101 8.75H5.17006C4.75006 8.75 4.41005 9.07 4.37005 9.48L4.01005 13.83C3.87005 15.53 5.21006 17 6.92006 17H18.0401C19.5401 17 20.8601 15.77 20.9701 14.27L21.3001 9.60001C21.3401 9.14001 20.9801 8.75 20.5101 8.75Z" fill="#34CAA5"/>
-                                            </svg>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.25 22.5C17.2165 22.5 18 21.7165 18 20.75C18 19.7835 17.2165 19 16.25 19C15.2835 19 14.5 19.7835 14.5 20.75C14.5 21.7165 15.2835 22.5 16.25 22.5Z"
+                                                fill="#34CAA5" />
+                                            <path
+                                                d="M8.25 22.5C9.2165 22.5 10 21.7165 10 20.75C10 19.7835 9.2165 19 8.25 19C7.2835 19 6.5 19.7835 6.5 20.75C6.5 21.7165 7.2835 22.5 8.25 22.5Z"
+                                                fill="#34CAA5" />
+                                            <path opacity="0.4"
+                                                d="M4.84 3.94L4.64 6.39C4.6 6.86 4.97 7.25 5.44 7.25H20.75C21.17 7.25 21.52 6.92999 21.55 6.50999C21.68 4.73999 20.33 3.3 18.56 3.3H6.28999C6.18999 2.86 5.98999 2.44 5.67999 2.09C5.18999 1.56 4.49 1.25 3.77 1.25H2C1.59 1.25 1.25 1.59 1.25 2C1.25 2.41 1.59 2.75 2 2.75H3.74001C4.05001 2.75 4.34 2.88001 4.55 3.10001C4.76 3.33001 4.86 3.63 4.84 3.94Z"
+                                                fill="#34CAA5" />
+                                            <path
+                                                d="M20.5101 8.75H5.17006C4.75006 8.75 4.41005 9.07 4.37005 9.48L4.01005 13.83C3.87005 15.53 5.21006 17 6.92006 17H18.0401C19.5401 17 20.8601 15.77 20.9701 14.27L21.3001 9.60001C21.3401 9.14001 20.9801 8.75 20.5101 8.75Z"
+                                                fill="#34CAA5" />
+                                        </svg>
                                     </div>
                                 </div>
                                 <div class="justify_center">
@@ -693,8 +706,8 @@
                             <div class="aFooter">
                                 <div>
                                     <div class="aBadge-1 aBadge-danger justify_center">
-                                        <div class="svg_cont justify_center "><svg width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                        <div class="svg_cont justify_center "><svg width="10" height="6"
+                                                viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M0.5 0.5L3.5 3.5L5.5 1.5L9.5 5.5" stroke="#ED544E"
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                                 <path d="M6 5.5H9.5V2" stroke="#ED544E" stroke-linecap="round"
@@ -711,12 +724,19 @@
                             <div class="aHeader">
                                 <div>
                                     <div class="svg_container justify_center">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path opacity="0.4" d="M9.99 17.98C14.4028 17.98 17.98 14.4028 17.98 9.99C17.98 5.57724 14.4028 2 9.99 2C5.57724 2 2 5.57724 2 9.99C2 14.4028 5.57724 17.98 9.99 17.98Z" fill="#34CAA5"/>
-                                            <path d="M21.9701 15.99C21.9701 19.29 19.2901 21.97 15.9901 21.97C13.9501 21.97 12.1601 20.95 11.0801 19.4C15.4401 18.91 18.9101 15.44 19.4001 11.08C20.9501 12.16 21.9701 13.95 21.9701 15.99Z" fill="#34CAA5"/>
-                                            <path d="M11.45 9.71003L9.05 8.87003C8.81 8.79003 8.76 8.77003 8.76 8.42003C8.76 8.16003 8.94 7.95003 9.17 7.95003H10.67C10.99 7.95003 11.25 8.24003 11.25 8.60003C11.25 9.01003 11.59 9.35003 12 9.35003C12.41 9.35003 12.75 9.01003 12.75 8.60003C12.75 7.45003 11.86 6.51003 10.75 6.46003V6.41003C10.75 6.00003 10.41 5.66003 10 5.66003C9.59 5.66003 9.25 5.99003 9.25 6.41003V6.46003H9.16C8.11 6.46003 7.25 7.34003 7.25 8.43003C7.25 9.38003 7.67 9.99003 8.54 10.29L10.95 11.13C11.19 11.21 11.24 11.23 11.24 11.58C11.24 11.84 11.06 12.05 10.83 12.05H9.33C9.01 12.05 8.75 11.76 8.75 11.4C8.75 10.99 8.41 10.65 8 10.65C7.59 10.65 7.25 10.99 7.25 11.4C7.25 12.55 8.14 13.49 9.25 13.54V13.6C9.25 14.01 9.59 14.35 10 14.35C10.41 14.35 10.75 14.01 10.75 13.6V13.55H10.84C11.89 13.55 12.75 12.67 12.75 11.58C12.75 10.63 12.32 10.02 11.45 9.71003Z" fill="#34CAA5"/>
-                                            </svg>
-                                            
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.4"
+                                                d="M9.99 17.98C14.4028 17.98 17.98 14.4028 17.98 9.99C17.98 5.57724 14.4028 2 9.99 2C5.57724 2 2 5.57724 2 9.99C2 14.4028 5.57724 17.98 9.99 17.98Z"
+                                                fill="#34CAA5" />
+                                            <path
+                                                d="M21.9701 15.99C21.9701 19.29 19.2901 21.97 15.9901 21.97C13.9501 21.97 12.1601 20.95 11.0801 19.4C15.4401 18.91 18.9101 15.44 19.4001 11.08C20.9501 12.16 21.9701 13.95 21.9701 15.99Z"
+                                                fill="#34CAA5" />
+                                            <path
+                                                d="M11.45 9.71003L9.05 8.87003C8.81 8.79003 8.76 8.77003 8.76 8.42003C8.76 8.16003 8.94 7.95003 9.17 7.95003H10.67C10.99 7.95003 11.25 8.24003 11.25 8.60003C11.25 9.01003 11.59 9.35003 12 9.35003C12.41 9.35003 12.75 9.01003 12.75 8.60003C12.75 7.45003 11.86 6.51003 10.75 6.46003V6.41003C10.75 6.00003 10.41 5.66003 10 5.66003C9.59 5.66003 9.25 5.99003 9.25 6.41003V6.46003H9.16C8.11 6.46003 7.25 7.34003 7.25 8.43003C7.25 9.38003 7.67 9.99003 8.54 10.29L10.95 11.13C11.19 11.21 11.24 11.23 11.24 11.58C11.24 11.84 11.06 12.05 10.83 12.05H9.33C9.01 12.05 8.75 11.76 8.75 11.4C8.75 10.99 8.41 10.65 8 10.65C7.59 10.65 7.25 10.99 7.25 11.4C7.25 12.55 8.14 13.49 9.25 13.54V13.6C9.25 14.01 9.59 14.35 10 14.35C10.41 14.35 10.75 14.01 10.75 13.6V13.55H10.84C11.89 13.55 12.75 12.67 12.75 11.58C12.75 10.63 12.32 10.02 11.45 9.71003Z"
+                                                fill="#34CAA5" />
+                                        </svg>
+
                                     </div>
                                 </div>
                                 <div class="justify_center">
@@ -729,8 +749,8 @@
                             <div class="aFooter">
                                 <div>
                                     <div class="aBadge-1 justify_center">
-                                        <div class="svg_cont justify_center"><svg width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                        <div class="svg_cont justify_center"><svg width="10" height="6"
+                                                viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M0.5 5.5L3.5 2.5L5.5 4.5L9.5 0.5" stroke="#34CAA5"
                                                     stroke-linecap="round" stroke-linejoin="round" />
                                                 <path d="M6 0.5H9.5V4" stroke="#34CAA5" stroke-linecap="round"
@@ -799,6 +819,7 @@
                 </div>
             </div>
         </div>
+        s
     </main>
 
     <div>
@@ -810,8 +831,69 @@
             </svg>
         </button>
     </div>
-
+    <script type="text/javascript">
+        const data = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+            datasets: [{
+                label: 'Sales',
+                data: ['6000', '20000', '3500', '30000', '1000', '45000', '1000', '1000', '1000', '1000', '1000', '1000'],
+                borderColor: '#34caa5',
+                backgroundColor: '#34caa5',
+                // Add other customization options as needed
+            }]
+        }
+    </script>
     <script src="script.js" type="text/javascript"></script>
 </body>
 
 </html>
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar', // Specify chart type as line
+        data: data,
+        options: {
+            // Customize chart options here, e.g.,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function (value, index, values) {
+                            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); // Add commas to y-axis values
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                }
+            },
+            elements: {
+                bar: {
+                    borderRadius: 40, // Set the border radius for bars
+                }
+            },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20,
+                    top: 0,
+                    bottom: 20,
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false, // Hide the horizontal lines (grid lines) on the X-axis
+                    }
+                },
+                y: {
+                    grid: {
+                        display: true, // You can set this to true or false based on your preference
+                    }
+                }
+            }
+        }
+    });
+</script>
