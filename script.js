@@ -48,12 +48,10 @@ function generateInvoice(name,invoiceDate,status, item, quantity, unitPrice, tot
         footer:
             `<div style="display:flex;justify-content: space-between;">
               <div>
-                <button class="btn btn-secondary" onclick="printInvoice()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                  <path d="M18 8h-4v4h-4v-4h-4v-4h4V8h4v4h4v4z" fill="currentColor"/>
-                </svg></button>
+                <button class="btn btn-secondary" onclick="printInvoice()">Print</button>
                 <a class="btn btn-primary" href="#" onclick="downloadInvoice()">Download</a>
               </div>
-              <div>
+              <div class="justify_center">
                 <span class="total-amount"><strong>Total: ${invoiceData.totalAmount}</strong></span>
               </div>
             </div>`

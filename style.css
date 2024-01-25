@@ -541,3 +541,34 @@ tr {
 .aBadge-danger{
     background: #ED544E1F!important;
 }
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--theme-col-primary);
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  color: black;
+  background-color: rgba(239, 239, 240, 0.9);
+  border-color: rgba(239, 239, 240, 0.9);
+}
