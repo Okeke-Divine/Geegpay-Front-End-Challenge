@@ -51,9 +51,13 @@ body {
   background-color: var(--background-color);
 }
 
-.text_primary{
+.text_primary {
   color: var(--theme-col-primary);
 }
+
+.text_danger {
+    color: var(--theme-col-red);
+  }
 
 .primary_link {
   color: var(--theme-col-primary);
@@ -89,6 +93,15 @@ body {
 
 .text_light {
   color: var(--font-color-light);
+}
+
+.text_def {
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .sidebar {
@@ -424,8 +437,7 @@ main.container {
 
 table {
   width: 100%;
-  border: 1px solid black;
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
 }
 th {
   font-family: Plus Jakarta Sans;
@@ -437,7 +449,15 @@ th {
 }
 th,
 td {
-  border: 1px solid black;
-  padding: 15px;
+  padding: 10px 15px;
   text-align: left;
+}
+
+.justify_center_tb {
+  display: flex;
+  align-items: center;
+}
+
+.tb_view {
+  column-gap: 10px;
 }
