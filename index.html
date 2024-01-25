@@ -836,10 +836,11 @@
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
             datasets: [{
                 label: 'Sales',
-                data: ['6000', '20000', '3500', '30000', '1000', '45000', '1000', '1000', '1000', '1000', '1000', '1000'],
+                data: ['6000', '20000', '4500', '30000', '1000', '45000', '12000', '22000', '37800', '7323', '32678', '26000'],
                 borderColor: '#34caa5',
-                backgroundColor: '#34caa5',
-                // Add other customization options as needed
+                backgroundColor: '#34CAA51F',
+                // hoverBackgroundColor: 'brown',
+                hoverBackgroundColor: 'linear-gradient(red, pink, blue, yellow)',
             }]
         }
     </script>
@@ -850,13 +851,15 @@
 <script>
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
-        type: 'bar', // Specify chart type as line
+        type: 'bar', 
         data: data,
         options: {
-            // Customize chart options here, e.g.,
             scales: {
                 y: {
                     beginAtZero: true,
+                    min: 0, 
+                    max: 50000,   
+                    suggestedMax: 50000,
                     ticks: {
                         callback: function (value, index, values) {
                             return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); // Add commas to y-axis values
@@ -890,7 +893,8 @@
                 },
                 y: {
                     grid: {
-                        display: true, // You can set this to true or false based on your preference
+                        color: 'rgba(239, 239, 240, 0.9)', // Set the color and opacity of X-axis grid lines
+                        display: true,
                     }
                 }
             }
