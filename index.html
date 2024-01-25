@@ -869,8 +869,6 @@
         gradient.addColorStop(0.9, "#34caa5");
         gradient.addColorStop(0, "#34CAA51F");
         gradient.addColorStop(0, "#34CAA51F");
-        gradient.addColorStop(0, "#34CAA51F");
-        gradient.addColorStop(0, "#34CAA51F");
         gradient.addColorStop(0, "white");
         gradient.addColorStop(0, "white");
         return gradient;
@@ -893,7 +891,11 @@
             },
             plugins: {
                 tooltip: {
+                    yAlign: 'bottom',
+                    enabled: true,
+                    displayColors: false,
                     callbacks: {
+                        title : () => null,
                         label: function (context) {
                             let label = context.dataset.label || '';
 
