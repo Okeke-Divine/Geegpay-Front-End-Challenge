@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Geegpay-Front-End-Challenge | Built by Okeke Divine-Vessel</title>
 </head>
 
@@ -881,8 +882,9 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: 50000,
                     ticks: {
+                        suggestedMax: 500000,
+
                         callback: function (value, index, values) {
                             return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
                         }
@@ -895,7 +897,7 @@
                     enabled: true,
                     displayColors: false,
                     callbacks: {
-                        title : () => null,
+                        title: () => null,
                         label: function (context) {
                             let label = context.dataset.label || '';
 
