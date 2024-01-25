@@ -38,7 +38,7 @@
     	width: 150px;
 	}
 	.sidebar_visibility_toggle{
-		display: block;
+		display: flex;
 	}
 }
 
