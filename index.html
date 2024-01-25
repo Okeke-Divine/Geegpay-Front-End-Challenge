@@ -832,15 +832,23 @@
         </button>
     </div>
     <script type="text/javascript">
+
         const data = {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
             datasets: [{
-                label: 'Sales',
-                data: ['6000', '20000', '4500', '30000', '1000', '45000', '12000', '22000', '37800', '7323', '32678', '26000'],
+                // label: 'Sales',
+                data: ['6000', '20000', '4500', '30000', '8000', '45000', '12000', '22000', '37800', '7323', '32678', '26000'],
                 borderColor: '#34caa5',
+                fill: true,
                 backgroundColor: '#34CAA51F',
-                // hoverBackgroundColor: 'brown',
-                hoverBackgroundColor: 'linear-gradient(red, pink, blue, yellow)',
+                hoverBackgroundColor: function (context) {
+                    const chart = context.chart;
+                    const { ctx, chartArea } = chart;
+
+                    // This case happens on initial chart load
+                    if (!chartArea) return;
+                    return getGradient(ctx, chartArea);
+                },
             }]
         }
     </script>
@@ -850,15 +858,33 @@
 </html>
 <script>
     const ctx = document.getElementById('myChart').getContext('2d');
+
+    function getGradient(ctx, chartArea) {
+        let gradient = ctx.createLinearGradient(
+            0,
+            chartArea.bottom,
+            0,
+            chartArea.top
+        );
+        gradient.addColorStop(0.9, "#34caa5");
+        gradient.addColorStop(0, "#34CAA51F");
+        gradient.addColorStop(0, "#34CAA51F");
+        gradient.addColorStop(0, "#34CAA51F");
+        gradient.addColorStop(0, "#34CAA51F");
+        gradient.addColorStop(0, "white");
+        gradient.addColorStop(0, "white");
+        return gradient;
+    }
+
     const myChart = new Chart(ctx, {
-        type: 'bar', 
+        type: 'bar',
         data: data,
         options: {
             scales: {
                 y: {
                     beginAtZero: true,
-                    min: 0, 
-                    max: 50000,   
+                    min: 0,
+                    max: 50000,
                     suggestedMax: 50000,
                     ticks: {
                         callback: function (value, index, values) {
