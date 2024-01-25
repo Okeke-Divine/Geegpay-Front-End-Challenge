@@ -10,7 +10,8 @@
 :root {
   --sidebar-width: 80px;
   --font-color-main: black;
-  --font-color-light: rgb(120, 116, 134);
+  /* --font-color-light: rgb(120, 116, 134); */
+  --font-color-light: #9CA4AB;
   --background-color: #ffffff;
   --sidebar-color: rgb(247, 248, 250);
   --border-color: rgba(0, 0, 0, 0.1);
@@ -45,7 +46,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: var(--background-color);
 }
 
@@ -227,7 +229,7 @@ main.container {
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -313,6 +315,9 @@ main.container {
   padding: 15px;
   box-sizing: border-box;
   border-radius: 7px;
+}
+
+.other_content > .left > div {
   border: 1px solid var(--border-color);
 }
 
@@ -402,4 +407,32 @@ main.container {
 .bar-4 {
   width: 60%;
   background: var(--theme-col-red);
+}
+
+.top_platform {
+  border: none !important;
+}
+
+.above .a-row {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--font-color-light);
+}
+th,
+td {
+  padding: 15px;
+  text-align: left;
 }
