@@ -859,6 +859,7 @@
 </html>
 <script>
     const ctx = document.getElementById('myChart').getContext('2d');
+    const customTicks = [0, 5000, 10000, 20000, 30000, 40000, 50000];
 
     function getGradient(ctx, chartArea) {
         let gradient = ctx.createLinearGradient(
@@ -885,7 +886,6 @@
                     ticks: {
                         // maxTicksLimit: 6, // Set the maximum number of ticks
                         // stepSize: 10000, // Set the step size between ticks
-                        values: [0, 5000, 10000, 20000, 30000, 40000, 50000],
                         callback: function (value, index, values) {
                             return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
                         }
