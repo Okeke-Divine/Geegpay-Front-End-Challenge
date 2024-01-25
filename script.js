@@ -49,13 +49,15 @@ function generateInvoice(name,invoiceDate,status, item, quantity, unitPrice, tot
             `<div style="display:flex;justify-content: space-between;">
               <div>
                 <button class="btn btn-secondary" onclick="printInvoice()">Print</button>
-                <a class="btn btn-primary" href="#" onclick="downloadInvoice()">Download</a>
+                <a class="btn btn-primary" href="javascript:void(0)" onclick="downloadInvoice()">Download</a>
               </div>
               <div class="justify_center">
                 <span class="total-amount"><strong>Total: ${invoiceData.totalAmount}</strong></span>
               </div>
             </div>`
     });
+
+}
 
     // Function to handle the print button click
     function printInvoice() {
@@ -74,4 +76,3 @@ function generateInvoice(name,invoiceDate,status, item, quantity, unitPrice, tot
           icon: "success"
         });
     }
-}
