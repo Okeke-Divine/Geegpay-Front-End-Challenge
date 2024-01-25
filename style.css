@@ -11,7 +11,7 @@
   --sidebar-width: 80px;
   --font-color-main: black;
   /* --font-color-light: rgb(120, 116, 134); */
-  --font-color-light: #9CA4AB;
+  --font-color-light: #9ca4ab;
   --background-color: #ffffff;
   --sidebar-color: rgb(247, 248, 250);
   --border-color: rgba(0, 0, 0, 0.1);
@@ -49,6 +49,10 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--background-color);
+}
+
+.text_primary{
+  color: var(--theme-col-primary);
 }
 
 .primary_link {
@@ -420,7 +424,8 @@ main.container {
 
 table {
   width: 100%;
-  border-collapse: collapse;
+  border: 1px solid black;
+  /* border-collapse: collapse; */
 }
 th {
   font-family: Plus Jakarta Sans;
@@ -428,11 +433,11 @@ th {
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0em;
-  text-align: left;
   color: var(--font-color-light);
 }
 th,
 td {
+  border: 1px solid black;
   padding: 15px;
   text-align: left;
 }
