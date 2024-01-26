@@ -104,8 +104,6 @@ function main_print(
 // Function to handle the print button click
 function printInvoice() {
   main_print();
-  //   const targetDiv = document.querySelector(".swal2-container .swal2-popup");
-  print;
   Swal.fire({
     title: "Print Successful",
     text: "Your invoice has been successfully sent to the printer for processing. Please check your printer for the printed copy.",
@@ -207,21 +205,69 @@ function logout() {
 function dark_mode() {
   document.documentElement.classList.add("dark-mode");
   document.getElementById("light_mode_btn").classList.remove("lmode_active");
+  document
+    .getElementById("light_mode_btn")
+    .classList.remove("theme_toggle_button_active");
   document.getElementById("dark_mode_btn").classList.add("lmode_active");
 }
 
 function light_mode() {
   document.documentElement.classList.remove("dark-mode");
   document.getElementById("dark_mode_btn").classList.remove("lmode_active");
+  document
+    .getElementById("light_mode_btn")
+    .classList.add("theme_toggle_button_active");
   document.getElementById("light_mode_btn").classList.add("lmode_active");
 }
 
-{/* <image src="assets/images/Profile.png" /> */}
-function account_dropdown(){
+{
+  /* <image src="assets/images/Profile.png" /> */
+}
+function account_dropdown() {
   Swal.fire({
     imageUrl: "assets/images/Profile.png",
     imageAlt: "User Profile Image",
     title: "Profile Details",
-    html: "<b>Full Name:</b> Okeke Divine<br /><b>Email:</b> divine@gmail.com<br /><b>Gender:</b> Male<br /><b>DOB:</b> Jan 1st, 2025<hr /><b>Role:</b> Asst. Admin"
+    html: "<b>Full Name:</b> Okeke Divine<br /><b>Email:</b> divine@gmail.com<br /><b>Gender:</b> Male<br /><b>DOB:</b> Jan 1st, 2025<hr /><b>Role:</b> Asst. Admin",
   });
+}
+
+function downloadChart() {
+  const myChart = document.getElementById("myChart");
+  var image = myChart.toDataURL();
+  var tmpLink = document.createElement("a");
+  tmpLink.download = "Chart.png";
+  tmpLink.href = image;
+  document.body.appendChild(tmpLink);
+  tmpLink.click();
+  document.body.removeChild(tmpLink);
+  Swal.fire({
+    title: "Download Successful",
+    text: "Your invoice download has started. The file is being prepared and will be available shortly. Please check your downloads folder.",
+    icon: "success",
+  });
+}
+
+// print myChart
+function printChart() {
+  const dataUrl = document.getElementById('myChart').toDataURL(); 
+
+  let windowContent = '<!DOCTYPE html>';
+  windowContent += '<html>';
+  windowContent += '<head><title>Print canvas</title></head>';
+  windowContent += '<body><h2>Sales Trend</h2>';
+  windowContent += '<img src="' + dataUrl + '">';
+  windowContent += '</body>';
+  windowContent += '</html>';
+  
+  const printWin = window.open('', '', 'width=' + screen.availWidth + ',height=' + screen.availHeight);
+  printWin.document.open();
+  printWin.document.write(windowContent); 
+  
+  printWin.document.addEventListener('load', function() {
+      printWin.focus();
+      printWin.print();
+      printWin.document.close();
+      printWin.close();            
+  }, true);
 }

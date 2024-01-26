@@ -16,5 +16,7 @@ xxxxxxxxxSETTING DROP DOWN
 -------------RESPONSIVE NAVBAR
 -------------RESPONSIVE TABLE
 -------------ACCOUNT DROPDOWN
-DOWNLOAD GRAPH
-SCATTER/BAR/LINE CHART TOGGLE
+-------------DOWNLOAD GRAPH
+-------------BAR/LINE CHART TOGGLE
+-------------sort by drop down
+-------------PRINT CHART

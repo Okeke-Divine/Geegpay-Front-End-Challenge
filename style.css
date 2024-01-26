@@ -18,7 +18,7 @@
   --font-color-light2: rgba(0, 0, 0, 0.8);
   --background-color: #ffffff;
   --sidebar-color: rgb(247, 248, 250);
-  --border-color: rgba(239, 239, 240, 0.9);
+  --border-color: #e5e5e6;
   --col-black: black;
   --svg-fill: #b2abab;
   --svg-fill-2: #b2abab;
@@ -406,15 +406,21 @@ main.container {
 
 .theme_toggle_button_active svg path {
   fill: #eee !important;
+  stroke: #eee!important;
+
 }
 
-.theme_toggle_button_de svg path {
+.theme_toggle_button_de svg path{
+  stroke: #eee!important;
+}
+
+/* .theme_toggle_button_de svg path {
   fill: #b2abab !important;
 }
 
 .theme_toggle_button_de svg rect {
   fill: transparent !important;
-}
+} */
 
 .other_content {
   display: grid;
@@ -680,7 +686,6 @@ tr {
 .btn-primary {
   color: #fff;
   background-color: var(--theme-col-primary);
-  border-color: #007bff;
 }
 
 .btn-secondary {
@@ -751,4 +756,50 @@ tr {
 .chart-controls{
   display: flex;
   justify-content: space-between;
+}
+
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  column-gap: 10px;
+  padding: 10px 20px;
+  background: var(--background-color);
+  color:var(--font-color-main);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content div {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+.dropdown-content div:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.sort_by{
+  display: flex;
+  column-gap: 20px;
 }

@@ -360,7 +360,26 @@
                             <div class="sort_by">
                                 <div class="sort_by_main justify_center">Sort by:</div>
                                 <div class="sort_by_dropdown justify_center">
-                                    <div class="sort_by_dropdown_main"></div>
+                                    <div class="sort_by_dropdown_main">
+                                        <div class="dropdown">
+                                            <button class="dropbtn justify_center">
+                                                Yearly
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M3.19841 6.20675C3.43891 5.95614 3.81525 5.93336 4.08045 6.1384L4.15643 6.20675L10 12.2955L15.8436 6.20675C16.0841 5.95614 16.4604 5.93336 16.7256 6.1384L16.8016 6.20675C17.0421 6.45735 17.064 6.84951 16.8672 7.12585L16.8016 7.20502L10.479 13.7933C10.2385 14.0439 9.86217 14.0666 9.59697 13.8616L9.52099 13.7933L3.19841 7.20502C2.93386 6.92935 2.93386 6.48241 3.19841 6.20675Z"
+                                                        fill="#0D062D" />
+                                                </svg>
+                                            </button>
+                                            <div class="dropdown-content">
+                                                <div class="justify_center">Daily</div>
+                                                <div class="justify_center">Weekly</div>
+                                                <div class="justify_center">Monthly</div>
+                                                <div class="justify_center">Yearly</div>
+                                                <div class="justify_center">Custom</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -370,10 +389,15 @@
                         <hr />
                         <div class="chart-controls">
                             <div>
-                                <button class="btn btn-primary">Bar</button>
-                                <button class="btn btn-secondary">Line</button>
+                                <button class="chart_type_toggle btn btn-primary cur_pointer" id="to_bar_chart"
+                                    onclick="updateChart('bar')">Bar</button>
+                                <button class="chart_type_toggle btn btn-secondary cur_pointer" id="to_line_chart"
+                                    onclick="updateChart('line')">Line</button>
                             </div>
-                            <div><button class="btn btn-primary">Download</button></div>
+                            <div>
+                                <button class="btn btn-secondary cur_pointer" onclick="printChart()">Print</button>
+                                <button class="btn btn-primary cur_pointer" onclick="downloadChart()">Download</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -857,7 +881,6 @@
                 </div>
             </div>
         </div>
-        s
     </main>
 
     <div>
@@ -878,9 +901,8 @@
             datasets: [{
                 // label: 'Sales',
                 data: ['6000', '20000', '4500', '30000', '8000', '45000', '12000', '22000', '37800', '7323', '32678', '26000'],
-                borderColor: '#34caa5',
                 fill: true,
-                backgroundColor: 'rgba(214, 245, 237,0.7)',
+                backgroundColor: '#34caa5',
                 hoverBackgroundColor: function (context) {
                     const chart = context.chart;
                     const { ctx, chartArea } = chart;
@@ -911,7 +933,7 @@
         return gradient;
     }
 
-    const myChart = new Chart(ctx, {
+    var myChart = new Chart(ctx, {
         type: 'bar',
         data: data,
         options: {
@@ -980,13 +1002,148 @@
     const bar_config = {
         type: 'bar',
         data,
-        options: {}
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        maxTicksLimit: 7, // Set the maximum number of ticks
+                        stepSize: 10000, // Set the step size between ticks
+                        callback: function (value, index, values) {
+                            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(239, 239, 240, 0.9)',
+                        display: true,
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                    }
+                },
+            },
+            plugins: {
+                tooltip: {
+                    yAlign: 'bottom',
+                    enabled: true,
+                    displayColors: false,
+                    callbacks: {
+                        title: () => null,
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    display: false,
+                }
+            },
+            elements: {
+                bar: {
+                    borderRadius: 40,
+                }
+            },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20,
+                    top: 0,
+                    bottom: 20,
+                }
+            },
+        }
     }
 
     const line_config = {
         type: 'line',
-        data,
-        options: {}
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+            datasets: [{
+                // label: 'Sales',
+                data: ['6000', '20000', '4500', '30000', '8000', '45000', '12000', '22000', '37800', '7323', '32678', '26000'],
+                fill: false,
+                borderColor: 'rgba(47, 182, 149,0.4)',
+                backgroundColor: '#34caa5',
+                hoverBackgroundColor: function (context) {
+                    const chart = context.chart;
+                    const { ctx, chartArea } = chart;
+
+                    // This case happens on initial chart load
+                    if (!chartArea) return;
+                    return getGradient(ctx, chartArea);
+                },
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        maxTicksLimit: 7, // Set the maximum number of ticks
+                        stepSize: 10000, // Set the step size between ticks
+                        callback: function (value, index, values) {
+                            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(239, 239, 240, 0.9)',
+                        display: true,
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                    }
+                },
+            },
+            plugins: {
+                tooltip: {
+                    yAlign: 'bottom',
+                    enabled: true,
+                    displayColors: false,
+                    callbacks: {
+                        title: () => null,
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    display: false,
+                }
+            },
+            elements: {
+                bar: {
+                    borderRadius: 40,
+                }
+            },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20,
+                    top: 0,
+                    bottom: 20,
+                }
+            },
+        }
     }
 
     function updateChartType(type) {
@@ -1002,11 +1159,19 @@
     function updateChart(type) {
         myChart.destroy();
         if (type === 'line') {
+            document.getElementById("to_line_chart").classList.remove("btn-secondary");
+            document.getElementById("to_line_chart").classList.add("btn-primary");
+            document.getElementById("to_bar_chart").classList.remove("btn-primary");
+            document.getElementById("to_bar_chart").classList.add("btn-secondary");
             myChart = new Chart(
                 document.getElementById("myChart"),
                 line_config
             )
         } else {
+            document.getElementById("to_bar_chart").classList.remove("btn-secondary");
+            document.getElementById("to_bar_chart").classList.add("btn-primary");
+            document.getElementById("to_line_chart").classList.remove("btn-primary");
+            document.getElementById("to_line_chart").classList.add("btn-secondary");
             myChart = new Chart(
                 document.getElementById("myChart"),
                 bar_config
