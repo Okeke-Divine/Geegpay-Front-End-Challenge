@@ -13,6 +13,7 @@
   --font-color-main: black;
   /* --font-color-light: rgb(120, 116, 134); */
   --font-color-light: #9ca4ab;
+  --font-color-light2: rgba(0,0,0,0.8);
   --background-color: #ffffff;
   --sidebar-color: rgb(247, 248, 250);
   --border-color: rgba(239, 239, 240, 0.9);
@@ -23,6 +24,7 @@
   --hover-col-1: rgba(0, 0, 0, 0.1);
   --html-bg-col: white;
   --latency-white: white;
+  --box-shadow-col:rgba(0, 0, 0, 0.15);
 }
 
 /* dark mode */
@@ -41,6 +43,7 @@
   --hover-col-1: rgba(255, 255, 255, 0.1);
   --html-bg-col: black;
   --latency-white: black;
+  --box-shadow-col:rgba(250, 250, 250, 0.15);
 }
 
 /* dark mode */
@@ -79,6 +82,19 @@ body {
   color: var(--font-color-main);
 }
 
+.swal2-title{
+  color: var(--font-color-main)!important;
+}
+
+.swal2-html-container{
+  color: var(--font-color-main)!important;
+}
+
+.swal2-popup{
+  background: var(--html-bg-col)!important;
+  box-shadow: 0 0.5rem 1rem var(--box-shadow-col)!important;
+}
+
 .text_danger {
   color: var(--theme-col-red);
 }
@@ -94,6 +110,10 @@ body {
 
 .svg_def_global2 {
   fill: var(--background-color);
+}
+
+.svg_def_global2 path{
+  stroke: var(--font-color-light2);
 }
 
 .link_component svg path {
