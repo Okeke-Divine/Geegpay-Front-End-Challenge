@@ -20,6 +20,7 @@
   --col-black: black;
   --svg-fill: #b2abab;
   --svg-fill-2: #b2abab;
+  --svg-fill-4: black;
   --toggle-theme-boder-color: #b2abab;
   --hover-col-1: rgba(0, 0, 0, 0.1);
   --html-bg-col: white;
@@ -32,13 +33,15 @@
   --font-color-main: white;
   /* --font-color-light: black; */
   --font-color-light: rgba(239, 239, 240, 0.5);
-
+  --font-color-light2: white;
   --background-color: rgba(0, 0, 0, 0.8);
   --sidebar-color: rgba(0, 0, 0, 1);
   --border-color: rgba(250, 250, 250, 0.1);
   --col-black: white;
   --svg-fill: white;
   --svg-fill-2: white;
+  --svg-fill-3: white;
+  --svg-fill-4: white;
   --toggle-theme-boder-color: #4d4d4d;
   --hover-col-1: rgba(255, 255, 255, 0.1);
   --html-bg-col: black;
@@ -82,7 +85,7 @@ body {
   color: var(--font-color-main);
 }
 
-.swal2-title{
+.swal2-title,.total-amount{
   color: var(--font-color-main)!important;
 }
 
@@ -104,16 +107,25 @@ body {
   text-decoration: none;
 }
 
-.svg_def_global,.view_icon svg {
-  fill: var(--svg-fill) !important;
+.svg_def_global{
+  fill: var(--svg-fill)!important;
+}
+
+.view_icon svg {
+  stroke: var(--svg-fill-3)!important;
 }
 
 .svg_def_global2 {
   fill: var(--background-color);
+  fill: red;
 }
 
 .svg_def_global2 path{
   stroke: var(--font-color-light2);
+}
+
+.link_component svg.dfgsmgi path{
+  fill: var(--svg-fill-4) !important;
 }
 
 .link_component svg path {
@@ -375,6 +387,9 @@ main.container {
 
 .sales_trend, .last_orders, .top_platform, .analysis-type-a{
   background: var(--latency-white);
+}
+.sales_trend:hover, .last_orders:hover, .top_platform:hover, .analysis-type-a:hover{
+  box-shadow: 0 0.5rem 1rem var(--box-shadow-col)!important;
 }
 
 .other_content .left > .sales_trend,
@@ -646,4 +661,11 @@ tr {
   background: var(--theme-col-primary)!important;
   outline: none!important;
   border: none!important;
+}
+
+.logo_container_main{
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
