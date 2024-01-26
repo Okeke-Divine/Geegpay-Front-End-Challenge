@@ -150,8 +150,8 @@
                 <!-- toggle between light and dark mode -->
                 <div class="theme_toggle_container justify_center">
                     <div class="theme_toggle_inner">
-                        <div
-                            class="link_component theme_toggle_button theme_light justify_center cur_pointer theme_toggle_button_active">
+                        <div onclick="light_mode()" id="light_mode_btn"
+                            class="link_component lmode_active theme_toggle_button theme_light justify_center cur_pointer theme_toggle_button_active">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <rect width="30" height="30" rx="15" />
@@ -192,7 +192,8 @@
                                 </defs>
                             </svg>
                         </div>
-                        <div
+                        <div onclick="dark_mode()"
+                        id="dark_mode_btn"
                             class="link_component theme_toggle_button theme_dark justify_center cur_pointer theme_toggle_button_de">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

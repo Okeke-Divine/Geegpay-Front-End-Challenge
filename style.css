@@ -26,6 +26,23 @@
 }
 
 /* dark mode */
+:root.dark-mode {
+  --sidebar-width: 80px;
+  --font-color-main: white;
+  --font-color-light: black;
+  --background-color: #000000;
+  --sidebar-color: rgb(33, 33, 33);
+  --border-color: rgba(16, 16, 16, 0.9);
+  --col-black: white;
+  --svg-fill: #4d4d4d;
+  --svg-fill-2: #4d4d4d;
+  --toggle-theme-boder-color: #4d4d4d;
+  --hover-col-1: rgba(255, 255, 255, 0.1);
+  --html-bg-col: black;
+  --latency-white: black;
+}
+
+/* dark mode */
 
 /* :root {
   --sidebar-width: 80px;
@@ -296,7 +313,7 @@ main.container {
   display: none;
 }
 
-.link_component:hover {
+.link_component:hover,.lmode_active {
   background-color: var(--hover-col-1);
 }
 

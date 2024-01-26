@@ -203,3 +203,13 @@ function logout() {
     allowOutsideClick: true,
   });
 }
+
+function dark_mode() {
+  document.documentElement.classList.add("dark-mode");
+  document.getElementById("light_mode_btn").classList.remove("lmode_active");
+  document.getElementById("dark_mode_btn").classList.add("lmode_active");
+}
+
+function light_mode() {
+  document.documentElement.classList.remove("dark-mode");
+}
