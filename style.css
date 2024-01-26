@@ -738,3 +738,17 @@ tr {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+.sales_trend .pCard-title{
+  position: relative;
+  left: 20px;
+}
+
+.sales_trend .pCard-header{
+  margin-bottom: 10px;
+}
+
+.chart-controls{
+  display: flex;
+  justify-content: space-between;
+}
