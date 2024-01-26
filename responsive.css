@@ -11,7 +11,10 @@
 }
 
 @media (max-width: 1000px) {
-
+  .account_badge_cont .acc_details,
+  .account_badge_cont .expand_button {
+    display: none;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -35,25 +38,9 @@
   }
   .navbar {
     justify-content: space-between;
-    /* grid-template-columns: 40% 60%; */
   }
 }
 
-@media (max-width: 800px) {
-  .account_badge_cont .acc_details,
-  .account_badge_cont .expand_button {
-    display: none;
-  }
-}
-
-@media (max-width: 650px) {
-  .navbar {
-    /* grid-template-columns: 60% 40%; */
-  }
-  .date_text {
-    display: none;
-  }
-}
 
 @media (max-width: 540px) {
   .sidebar {
@@ -62,12 +49,6 @@
   }
   main.container {
     padding-left: 0px;
-  }
-  .date_text {
-    display: none;
-  }
-  .navbar {
-    /* grid-template-columns: 70% 30%; */
   }
   .search_box input.search_bar_input {
     width: 150px;
