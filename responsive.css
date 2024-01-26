@@ -76,3 +76,40 @@
     width: 100%;
   }
 }
+
+
+/* Make tables scroll horizontally at small breakpoints */
+@media (max-width: 575.98px) {
+  .table-responsive-sm {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+/* Make tables scroll horizontally at medium breakpoints */
+@media (max-width: 767.98px) {
+  .table-responsive-md {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+/* Make tables scroll horizontally at large breakpoints */
+@media (max-width: 991.98px) {
+  .table-responsive-lg {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+/* Make tables scroll horizontally at extra large breakpoints */
+@media (max-width: 1200px) {
+  .table-responsive-xl {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}

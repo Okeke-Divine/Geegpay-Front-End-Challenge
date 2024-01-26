@@ -376,7 +376,7 @@
                             <a href="#" class="primary_link">See All</a>
                         </div>
                     </div>
-                    <div class="pCard-body">
+                    <div class="pCard-body table-responsive">
                         <table>
                             <tr>
                                 <th>Name</th>
@@ -1005,5 +1005,18 @@
     }
     window.addEventListener('resize', function () {
         myChart.resize();
+        const toggle_button1 = document.querySelector(".sidebar_visibility_toggle");
+        const sidebar_visibily_toggle_default1 = toggle_button1.getAttribute(
+            "sidebar_visibily_toggle_default"
+        );
+        if (window.innerWidth > 540) {
+            document.querySelector(".sidebar").style.left = "0px";
+            toggle_button1.style.left = "90px";
+            toggle_button1.setAttribute("sidebar_visibily_toggle_default", "true");
+        } else {
+            document.querySelector(".sidebar").style.left = "-80px";
+            toggle_button1.style.left = "10px";
+            toggle_button1.setAttribute("sidebar_visibily_toggle_default", "false");
+        }
     });
 </script>
