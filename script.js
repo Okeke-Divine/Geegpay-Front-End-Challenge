@@ -8,13 +8,13 @@ function generateInvoice(
   totalAmount
 ) {
   const invoiceData_forDownload = [
-    name,
-    invoiceDate,
-    status,
-    item,
-    quantity,
-    unitPrice,
-    totalAmount,
+    "'" + name + "'",
+    "'" + invoiceDate + "'",
+    "'" + status + "'",
+    "'" + item + "'",
+    "'" + quantity + "'",
+    "'" + unitPrice + "'",
+    "'" + totalAmount + "'",
   ];
   // Sample data for the invoice
   const invoiceData = {
@@ -63,8 +63,8 @@ function generateInvoice(
     allowOutsideClick: true,
     footer: `<div style="display:flex;justify-content: space-between;">
               <div>
-                <button class="btn btn-secondary" onclick="printInvoice()">Print</button>
-                <a class="btn btn-primary" href="javascript:void(0)" onclick="downloadInvoice(${invoiceData_forDownload})">Download</a>
+                <button class="btn btn-secondary cur_pointer hideOnPrint_dfgdf" onclick="printInvoice(${invoiceData_forDownload})">Print</button>
+                <a class="btn btn-primary hideOnPrint_dfgdf" href="javascript:void(0)" onclick="downloadInvoice(${invoiceData_forDownload})">Download</a>
               </div>
               <div class="justify_center">
                 <span class="total-amount"><strong>Total: ${invoiceData.totalAmount}</strong></span>
@@ -73,8 +73,39 @@ function generateInvoice(
   });
 }
 
+function main_print(
+  name,
+  invoiceDate,
+  status,
+  item,
+  quantity,
+  unitPrice,
+  totalAmount
+) {
+  var header_str =
+    "<html><head><title>" +
+    "Invoice for " +
+    name +
+    " on " +
+    invoiceDate +
+    "</title></head><body><style>.swal2-close,.hideOnPrint_dfgdf{display:none!important;}.total-amount{margin-top:20px;}</style>";
+  var footer_str = "</body></html>";
+  var new_str = document.querySelector(
+    ".swal2-container .swal2-popup"
+  ).innerHTML;
+  var old_str = document.body.innerHTML;
+  document.body.innerHTML = header_str + new_str + footer_str;
+  window.print();
+  location.reload();
+  // document.body.innerHTML = old_str;
+  return false;
+}
+
 // Function to handle the print button click
 function printInvoice() {
+  main_print();
+  //   const targetDiv = document.querySelector(".swal2-container .swal2-popup");
+  print;
   Swal.fire({
     title: "Print Successful",
     text: "Your invoice has been successfully sent to the printer for processing. Please check your printer for the printed copy.",
@@ -83,13 +114,43 @@ function printInvoice() {
 }
 
 // Function to handle the download button click
-function downloadInvoice() {
-  //   const a = document.createElement("a");
-  //   const file = new Blob(["Hello world!"], { type: "text/plain" });
-  //   a.setAttribute("href", URL.createObjectURL(file));
-  //   a.setAttribute("download", "Invoice.txt");
-  //   a.click();
-  //   URL.revokeObjectURL(a.getAttribute("href"));
+function downloadInvoice(
+  name,
+  invoiceDate,
+  status,
+  item,
+  quantity,
+  unitPrice,
+  totalAmount
+) {
+  const a = document.createElement("a");
+  const file = new Blob(
+    [
+      "Name: " + name,
+      "\nAddress: 23 Main St, Cityville, State \n" +
+        "Invoice Date: " +
+        invoiceDate +
+        "\nStatus: " +
+        status +
+        "\n\nITEMS:\n===\n1. " +
+        item +
+        "   " +
+        quantity +
+        "   " +
+        unitPrice +
+        "   " +
+        totalAmount +
+        "\n",
+    ],
+    { type: "text/plain" }
+  );
+  a.setAttribute("href", URL.createObjectURL(file));
+  a.setAttribute(
+    "download",
+    "Invoice for " + name + " on " + invoiceDate + " .txt"
+  );
+  a.click();
+  URL.revokeObjectURL(a.getAttribute("href"));
 
   Swal.fire({
     title: "Download Successful",
