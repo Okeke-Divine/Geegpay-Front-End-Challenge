@@ -215,3 +215,13 @@ function light_mode() {
   document.getElementById("dark_mode_btn").classList.remove("lmode_active");
   document.getElementById("light_mode_btn").classList.add("lmode_active");
 }
+
+{/* <image src="assets/images/Profile.png" /> */}
+function account_dropdown(){
+  Swal.fire({
+    imageUrl: "assets/images/Profile.png",
+    imageAlt: "User Profile Image",
+    title: "Profile Details",
+    html: "<b>Full Name:</b> Okeke Divine<br /><b>Email:</b> divine@gmail.com<br /><b>Gender:</b> Male<br /><b>DOB:</b> Jan 1st, 2025<hr /><b>Role:</b> Asst. Admin"
+  });
+}

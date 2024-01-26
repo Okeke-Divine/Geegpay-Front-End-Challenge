@@ -349,6 +349,7 @@ main.container {
 
 ::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -562,6 +563,7 @@ main.container {
 table {
   width: 100%;
   border-collapse: collapse;
+  vertical-align: top;
 }
 th {
   font-family: Plus Jakarta Sans;
@@ -729,4 +731,10 @@ tr {
 .expand_button svg {
   position: relative;
   left: -10px;
+}
+
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
