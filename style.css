@@ -4,6 +4,7 @@
   --theme-col-blue: #54c5eb;
   --theme-col-yellow: #ffb74a;
   --theme-col-red: #ff4a55;
+  --transition-duration: 0.5s;
 }
 
 /* light mode */
@@ -15,11 +16,13 @@
   --background-color: #ffffff;
   --sidebar-color: rgb(247, 248, 250);
   --border-color: rgba(239, 239, 240, 0.9);
-  --transition-duration: 0.5s;
   --col-black: black;
   --svg-fill: #b2abab;
   --svg-fill-2: #b2abab;
+  --toggle-theme-boder-color: #b2abab;
   --hover-col-1: rgba(0, 0, 0, 0.1);
+  --html-bg-col: white;
+  --latency-white: white;
 }
 
 /* dark mode */
@@ -48,7 +51,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: var(--background-color);
+  background-color: var(--html-bg-col);
 }
 
 .text_primary {
@@ -68,7 +71,7 @@ body {
   fill: var(--svg-fill) !important;
 }
 
-.svg_def_global2{
+.svg_def_global2 {
   fill: var(--background-color);
 }
 
@@ -169,6 +172,7 @@ main.container {
   border-bottom: 1px solid var(--border-color);
   padding: 15px 25px;
   box-sizing: border-box;
+  background: var(--latency-white);
   transition: var(--transition-duration);
 }
 
@@ -327,6 +331,10 @@ main.container {
   transition: var(--transition-duration);
 }
 
+.sales_trend, .last_orders, .top_platform, .analysis-type-a{
+  background: var(--latency-white);
+}
+
 .other_content .left > .sales_trend,
 .other_content .right .above {
   margin-bottom: 20px;
@@ -441,8 +449,8 @@ main.container {
   margin-bottom: 10px;
 }
 
-.above .a-row:last-child{
-    margin-bottom: 0px;
+.above .a-row:last-child {
+  margin-bottom: 0px;
 }
 
 table {
@@ -534,12 +542,12 @@ tr {
   padding: 4px 8px;
   border-radius: 1000px;
   gap: 4px;
-  background: #34CAA51F;
+  background: #34caa51f;
   box-sizing: border-box;
 }
 
-.aBadge-danger{
-    background: #ED544E1F!important;
+.aBadge-danger {
+  background: #ed544e1f !important;
 }
 
 .btn {
@@ -571,4 +579,29 @@ tr {
   color: black;
   background-color: rgba(239, 239, 240, 0.9);
   border-color: rgba(239, 239, 240, 0.9);
+}
+
+.theme_toggle_inner .theme_light {
+  border: 1px solid var(--toggle-theme-boder-color);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+
+.theme_toggle_inner .theme_dark {
+  border: 1px solid var(--toggle-theme-boder-color);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top: none;
+}
+
+.aFooter > div:last-child {
+  text-align: right !important;
+}
+
+.swal2-confirm, .swal2-confirm:focus, .swal2-confirm:active{
+  background: var(--theme-col-primary)!important;
+  outline: none!important;
+  border: none!important;
 }

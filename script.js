@@ -1,24 +1,31 @@
-function generateInvoice(name,invoiceDate,status, item, quantity, unitPrice, totalAmount){
- // Sample data for the invoice
-    const invoiceData = {
-        name: name,
-        address: '123 Main St, Cityville, State',
-        invoiceDate: invoiceDate,
-        status: status,
-        totalAmount: totalAmount
-    };
+function generateInvoice(
+  name,
+  invoiceDate,
+  status,
+  item,
+  quantity,
+  unitPrice,
+  totalAmount
+) {
+  // Sample data for the invoice
+  const invoiceData = {
+    name: name,
+    address: "123 Main St, Cityville, State",
+    invoiceDate: invoiceDate,
+    status: status,
+    totalAmount: totalAmount,
+  };
 
-    // Generate a custom SweetAlert modal for the invoice
-    Swal.mixin({
-        customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger',
-        },
-        buttonsStyling: false,
-    }).fire({
-        title: '<strong>Invoice</strong>',
-        html:
-            `<div>
+  // Generate a custom SweetAlert modal for the invoice
+  Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  }).fire({
+    title: "<strong>Invoice</strong>",
+    html: `<div>
                 <p><strong>Name:</strong> ${invoiceData.name}</p>
                 <p><strong>Address:</strong> ${invoiceData.address}</p>
                 <p><strong>Invoice Date:</strong> ${invoiceData.invoiceDate}</p>
@@ -41,12 +48,11 @@ function generateInvoice(name,invoiceDate,status, item, quantity, unitPrice, tot
                         </table>
 
             `,
-        showCloseButton: true,
-        showCancelButton: false,
-        showConfirmButton: false,
-        allowOutsideClick: true,
-        footer:
-            `<div style="display:flex;justify-content: space-between;">
+    showCloseButton: true,
+    showCancelButton: false,
+    showConfirmButton: false,
+    allowOutsideClick: true,
+    footer: `<div style="display:flex;justify-content: space-between;">
               <div>
                 <button class="btn btn-secondary" onclick="printInvoice()">Print</button>
                 <a class="btn btn-primary" href="javascript:void(0)" onclick="downloadInvoice()">Download</a>
@@ -54,25 +60,69 @@ function generateInvoice(name,invoiceDate,status, item, quantity, unitPrice, tot
               <div class="justify_center">
                 <span class="total-amount"><strong>Total: ${invoiceData.totalAmount}</strong></span>
               </div>
-            </div>`
-    });
-
+            </div>`,
+  });
 }
 
-    // Function to handle the print button click
-    function printInvoice() {
-        Swal.fire({
-        title: "Print Successful",
-        text: "Your invoice has been successfully sent to the printer for processing. Please check your printer for the printed copy.",
-        icon: "success"
-      });
-    }
+// Function to handle the print button click
+function printInvoice() {
+  Swal.fire({
+    title: "Print Successful",
+    text: "Your invoice has been successfully sent to the printer for processing. Please check your printer for the printed copy.",
+    icon: "success",
+  });
+}
 
-    // Function to handle the download button click
-    function downloadInvoice() {
-         Swal.fire({
-          title: "Download Successful",
-          text: "Your invoice download has started. The file is being prepared and will be available shortly. Please check your downloads folder.",
-          icon: "success"
-        });
-    }
+// Function to handle the download button click
+function downloadInvoice() {
+  Swal.fire({
+    title: "Download Successful",
+    text: "Your invoice download has started. The file is being prepared and will be available shortly. Please check your downloads folder.",
+    icon: "success",
+  });
+}
+
+function sidebar_visibility_toggle() {
+  const sidebar = document.querySelector(".sidebar");
+  const toggle_button = document.querySelector(".sidebar_visibility_toggle");
+  const sidebar_visibily_toggle_default = toggle_button.getAttribute(
+    "sidebar_visibily_toggle_default"
+  );
+  if (sidebar_visibily_toggle_default === "false") {
+    toggle_button.setAttribute("sidebar_visibily_toggle_default", "true");
+    sidebar.style.left = "0px";
+    toggle_button.style.left = "90px";
+  } else {
+    toggle_button.setAttribute("sidebar_visibily_toggle_default", "false");
+    sidebar.style.left = "-80px";
+    toggle_button.style.left = "10px";
+  }
+}
+
+function showDate(date) {
+  Swal.fire({
+    title: "Info",
+    text: "Today's date is " + date,
+    icon: "info",
+  });
+}
+
+function showNotifications() {
+  Swal.fire({
+    title: "Notifications",
+    text: "Nothing is here",
+    icon: "info",
+  });
+}
+
+function logout() {
+  Swal.fire({
+    title: "Confirm",
+    text: "Are you sure you want to logout?",
+    icon: "warning",
+    showCloseButton: true,
+    showCancelButton: true,
+    showConfirmButton: true,
+    allowOutsideClick: true,
+  });
+}
