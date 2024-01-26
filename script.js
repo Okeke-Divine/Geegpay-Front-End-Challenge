@@ -7,6 +7,15 @@ function generateInvoice(
   unitPrice,
   totalAmount
 ) {
+  const invoiceData_forDownload = [
+    name,
+    invoiceDate,
+    status,
+    item,
+    quantity,
+    unitPrice,
+    totalAmount,
+  ];
   // Sample data for the invoice
   const invoiceData = {
     name: name,
@@ -55,7 +64,7 @@ function generateInvoice(
     footer: `<div style="display:flex;justify-content: space-between;">
               <div>
                 <button class="btn btn-secondary" onclick="printInvoice()">Print</button>
-                <a class="btn btn-primary" href="javascript:void(0)" onclick="downloadInvoice()">Download</a>
+                <a class="btn btn-primary" href="javascript:void(0)" onclick="downloadInvoice(${invoiceData_forDownload})">Download</a>
               </div>
               <div class="justify_center">
                 <span class="total-amount"><strong>Total: ${invoiceData.totalAmount}</strong></span>
@@ -75,6 +84,13 @@ function printInvoice() {
 
 // Function to handle the download button click
 function downloadInvoice() {
+  //   const a = document.createElement("a");
+  //   const file = new Blob(["Hello world!"], { type: "text/plain" });
+  //   a.setAttribute("href", URL.createObjectURL(file));
+  //   a.setAttribute("download", "Invoice.txt");
+  //   a.click();
+  //   URL.revokeObjectURL(a.getAttribute("href"));
+
   Swal.fire({
     title: "Download Successful",
     text: "Your invoice download has started. The file is being prepared and will be available shortly. Please check your downloads folder.",
