@@ -48,7 +48,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .search_box input.search_bar_input {
     width: 100px!important;
   }
