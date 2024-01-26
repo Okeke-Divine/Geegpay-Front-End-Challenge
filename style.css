@@ -206,6 +206,7 @@ table tr th,
   overflow-y: auto;
   overflow-x: hidden;
   justify-content: space-between;
+  z-index: 500!important;
 }
 
 .sidebar_divider {
@@ -802,4 +803,9 @@ tr {
 .sort_by{
   display: flex;
   column-gap: 20px;
+}
+
+.sales_trend .pCard-title{
+  position: relative;
+  top:10px;
 }

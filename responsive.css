@@ -52,10 +52,23 @@
   .search_box input.search_bar_input {
     width: 100px!important;
   }
+  .profile_frame {
+    column-gap: 15px!important;
+  }
+  .date_nd_icon {
+    column-gap: 15px!important;
+  }
+  .dashboard_name,.sort_by_main {
+    display: none;
+  }
+  .navbar{
+    grid-template-columns: 60% 40%;
+  }
 }
 
 @media (max-width: 540px) {
   .sidebar {
+    padding-right: 1000px!important!important;
     left: -80px;
     transition: var(--transition-duration);
   }
