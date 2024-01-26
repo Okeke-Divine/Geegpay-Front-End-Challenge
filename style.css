@@ -5,11 +5,11 @@
   --theme-col-yellow: #ffb74a;
   --theme-col-red: #ff4a55;
   --transition-duration: 0.5s;
+  --sidebar-width: 80px;
 }
 
 /* light mode */
 :root {
-  --sidebar-width: 80px;
   --font-color-main: black;
   /* --font-color-light: rgb(120, 116, 134); */
   --font-color-light: #9ca4ab;
@@ -27,15 +27,16 @@
 
 /* dark mode */
 :root.dark-mode {
-  --sidebar-width: 80px;
   --font-color-main: white;
-  --font-color-light: black;
-  --background-color: #000000;
-  --sidebar-color: rgb(33, 33, 33);
-  --border-color: rgba(16, 16, 16, 0.9);
+  /* --font-color-light: black; */
+  --font-color-light: rgba(239, 239, 240, 0.5);
+
+  --background-color: rgba(0, 0, 0, 0.8);
+  --sidebar-color: rgba(0, 0, 0, 1);
+  --border-color: rgba(250, 250, 250, 0.1);
   --col-black: white;
-  --svg-fill: #4d4d4d;
-  --svg-fill-2: #4d4d4d;
+  --svg-fill: white;
+  --svg-fill-2: white;
   --toggle-theme-boder-color: #4d4d4d;
   --hover-col-1: rgba(255, 255, 255, 0.1);
   --html-bg-col: black;
@@ -51,7 +52,6 @@
   --background-color: rgba(0, 0, 0, 0.8);
   --sidebar-color: rgba(0, 0, 0, 1);
   --border-color: rgba(250, 250, 250, 0.1);
-  --transition-duration: 0.5s;
   --col-black: white;
   --theme-col-primary: #34caa5;
   --svg-fill: white;
@@ -73,6 +73,10 @@ body {
 
 .text_primary {
   color: var(--theme-col-primary);
+}
+
+.framer_title,.aMain{
+  color: var(--font-color-main);
 }
 
 .text_danger {
@@ -124,6 +128,7 @@ body {
   font-size: 16px;
   font-weight: 530;
   line-height: 24px;
+  color: var(--font-color-main);
   letter-spacing: 0em;
   text-align: left;
 }
