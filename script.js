@@ -212,4 +212,6 @@ function dark_mode() {
 
 function light_mode() {
   document.documentElement.classList.remove("dark-mode");
+  document.getElementById("dark_mode_btn").classList.remove("lmode_active");
+  document.getElementById("light_mode_btn").classList.add("lmode_active");
 }
