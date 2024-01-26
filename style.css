@@ -104,7 +104,7 @@ body {
   text-decoration: none;
 }
 
-.svg_def_global {
+.svg_def_global,.view_icon svg {
   fill: var(--svg-fill) !important;
 }
 
