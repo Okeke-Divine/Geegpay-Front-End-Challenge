@@ -68,7 +68,7 @@
   --svg-fill-2: white;
   --hover-col-1: rgba(250, 250, 250, 0.1);
 } */
-
+/* <!-- // this code was written by divine --> */
 /* svg col b2abab */
 /* svg col2 0D062D */
 
@@ -91,6 +91,8 @@ body,
 .search_bar_input,
 button,
 table tr th,
+                                /* <!-- // this code was written by divine --> */
+
 .btn,
 .text_light,
 .text_primary,
@@ -98,7 +100,7 @@ table tr th,
 .pCard-title,
 .dashboard_name {
   /* font-family: Algerian !important; */
-  font-family: 'Inter', sans-serif!important;
+  font-family: "Inter", sans-serif !important;
 }
 
 .text_primary {
@@ -246,10 +248,10 @@ main.container {
 .navbar {
   display: grid;
   grid-template-columns: 65% 35%;
-  column-gap: 15px;
+  column-gap: 20px;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
-  padding: 15px 25px;
+  padding: 15px 30px 15px 25px;
   box-sizing: border-box;
   background: var(--latency-white);
   transition: var(--transition-duration);
@@ -262,6 +264,13 @@ main.container {
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
+}
+/* <!-- // this code was written by divine --> */
+
+.framer_title,
+.text_def,
+.text_bold {
+  font-weight: 450 !important;
 }
 
 .navbar .frame_1 {
@@ -289,16 +298,19 @@ main.container {
 }
 
 .profile_frame {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  /* display: grid; */
+  /* grid-template-columns: 50% 50%; */
+  display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
-  column-gap: 10px;
-  /*    justify-content: space-between;*/
+  column-gap: 20px;
 }
 
 .date_nd_icon {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  column-gap: 20px;
+  justify-content: right;
 }
 
 .date_nd_icon .date {
@@ -312,6 +324,10 @@ main.container {
   border: 1px solid var(--border-color);
   width: 35px;
   height: 35px;
+}
+
+.account_badge {
+  width: fit-content;
 }
 
 .account_badge_cont {
@@ -417,6 +433,8 @@ main.container {
 .analysis-type-a {
   background: var(--latency-white);
 }
+/* <!-- // this code was written by divine --> */
+
 .sales_trend:hover,
 .last_orders:hover,
 .top_platform:hover,
@@ -706,4 +724,11 @@ tr {
 
 .link_component:hover svg:last-child {
   display: block;
+}
+/* <!-- // this code was written by divine --> */
+
+
+.expand_button svg{
+  position: relative;
+  left: -10px;
 }

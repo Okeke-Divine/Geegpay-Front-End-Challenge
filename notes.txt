@@ -21,23 +21,3 @@ RESPONSIVE TABLE
 
 
 
-let clickCount = 0;
-
-function clickButton() {
-  console.clear();
-  const button = document.querySelector("form button");
-  const close = document.querySelector("#alert_ok");
-  
-  if (button) {
-    button.click();
-    clickCount++;
-    console.log(`Button has been clicked ${clickCount} times`);
-
-    setTimeout(function() {
-      close.click();
-    }, 5000);
-  }
-}
-
-clickButton();
-setInterval(clickButton, 60000);
