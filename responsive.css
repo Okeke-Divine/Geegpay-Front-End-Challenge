@@ -5,7 +5,7 @@
 }
 
 @media (max-width: 1285px) {
-  .date_text{
+  .date_text {
     display: none;
   }
 }
@@ -32,6 +32,13 @@
   }
 }
 
+@media (max-width: 900px) {
+  .other_content {
+    column-gap: 5px;
+    padding: 15px 15px!important;
+  }
+}
+
 @media (max-width: 965px) {
   .search_box input.search_bar_input {
     width: 140px;
@@ -41,6 +48,11 @@
   }
 }
 
+@media (max-width: 600px) {
+  .search_box input.search_bar_input {
+    width: 100px!important;
+  }
+}
 
 @media (max-width: 540px) {
   .sidebar {
@@ -49,9 +61,6 @@
   }
   main.container {
     padding-left: 0px;
-  }
-  .search_box input.search_bar_input {
-    width: 150px;
   }
   .sidebar_visibility_toggle {
     display: flex;

@@ -80,6 +80,7 @@ body {
   overflow-y: auto;
   background-color: var(--html-bg-col);
 }
+/* <!-- // this code was written by divine --> */
 
 html,
 body,
@@ -91,8 +92,6 @@ body,
 .search_bar_input,
 button,
 table tr th,
-                                /* <!-- // this code was written by divine --> */
-
 .btn,
 .text_light,
 .text_primary,
@@ -251,7 +250,7 @@ main.container {
   column-gap: 20px;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
-  padding: 15px 30px 15px 25px;
+  padding: 15px 40px 15px 25px;
   box-sizing: border-box;
   background: var(--latency-white);
   transition: var(--transition-duration);
@@ -727,8 +726,7 @@ tr {
 }
 /* <!-- // this code was written by divine --> */
 
-
-.expand_button svg{
+.expand_button svg {
   position: relative;
   left: -10px;
 }

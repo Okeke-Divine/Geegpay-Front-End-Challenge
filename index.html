@@ -1003,6 +1003,7 @@
         // myChart.config.type = type;
         // myChart.update();
     }
-
-    // updateChart('bar');
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    });
 </script>
