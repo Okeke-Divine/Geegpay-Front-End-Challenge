@@ -53,10 +53,10 @@
     width: 100px!important;
   }
   .profile_frame {
-    column-gap: 15px!important;
+    column-gap: 10px!important;
   }
   .date_nd_icon {
-    column-gap: 15px!important;
+    column-gap: 10px!important;
   }
   .dashboard_name,.sort_by_main {
     display: none;
