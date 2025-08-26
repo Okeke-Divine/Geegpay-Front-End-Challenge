@@ -1,6 +1,6 @@
 # Geegpay Dashboard · [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-> **A Pixel-Perfect, Framework-Agnostic Dashboard Built from a Figma Design.**
+> **A Pixel-Perfect, Dashboard Built from a Figma Design.**
 
 ## 🚀 Live Demo
 👉 **[View Live Dashboard](https://geegpay-dashboard.okekedivine.com.ng/)**
