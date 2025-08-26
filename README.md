@@ -6,6 +6,9 @@ A **Figma-to-Code Front-End Dashboard** built with **HTML, CSS, and JavaScript**
 
 ---
 
+## 🚀 Live Demo
+👉 **[Experience Portfoliia Live](https://geegpay-dashboard.okekedivine.com.ng/)**
+
 ## 📖 Overview
 This project is a **responsive front-end dashboard** designed and implemented from a Figma mockup as part of the **Geegpay Front-End Challenge**.  
 
