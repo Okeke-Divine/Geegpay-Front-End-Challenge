@@ -1,82 +1,52 @@
-# Geegpay Front-End Challenge
+# Geegpay Dashboard · [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-A **Figma-to-Code Front-End Dashboard** built with **HTML, CSS, and JavaScript** for the Geegpay UI Design Competition.
-
-![Dashboard Preview](./assets/images/dashboard.png)
-
----
+> **A Pixel-Perfect, Framework-Agnostic Dashboard Built from a Figma Design.**
 
 ## 🚀 Live Demo
-👉 **[Experience the Live Dashboard](https://geegpay-dashboard.okekedivine.com.ng/)**
+👉 **[View Live Dashboard](https://geegpay-dashboard.okekedivine.com.ng/)**
 
 ## 📖 Overview
-This project is a **responsive front-end dashboard** designed and implemented from a Figma mockup as part of the **Geegpay Front-End Challenge**.  
-
-It showcases a clean and professional user interface with real-world dashboard features such as sales trends, recent orders, statistics, and top platforms.
-
----
-
-## ✨ Features
-- 📊 **Sales Analytics** – Displays total orders, refunds, average sales, and total income  
-- 🛒 **Recent Orders Table** – Name, date, amount, status, and invoice view  
-- 📈 **Performance Metrics** – Percentage changes vs. previous month  
-- 🏆 **Top Platforms** – Revenue breakdown across platforms with growth rates  
-- 🎨 **Responsive Design** – Works across desktop and mobile screens  
-- ⚡ **Vanilla JavaScript** – For interactivity (sorting, dashboard toggles, etc.)  
-
----
-
-## 🖼️ UI Preview
-
-### Dashboard Elements
-- **Sales Trend Chart**
-- **Recent Orders Section**
-- **Summary Cards**
-- **Top Platform Rankings**
-
----
+This project is a **production-ready front-end dashboard** built with **HTML, CSS, and JavaScript** for the Geegpay UI Design Competition. It demonstrates the ability to accurately translate complex Figma designs into fully functional, responsive web interfaces without relying on external frameworks or libraries.
 
 ## 🛠️ Tech Stack
-- **HTML5** – Structure  
-- **CSS3 (Responsive + Flex/Grid)** – Styling  
-- **JavaScript (ES6)** – Interactivity  
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+- **Layout:** CSS Flexbox & Grid
+- **Charts:** Chart.js
+- **Deployment:** Vercel
 
-No external frameworks or libraries were used, everything was **built from scratch**.
-
----
+## 🎨 Key Features
+- **📊 Sales Analytics Dashboard:** Displays total orders, refunds, average sales, and total income with visual trends.
+- **📋 Interactive Data Tables:** Recent orders table with sortable columns and status indicators.
+- **📈 Performance Metrics Cards:** Shows percentage changes vs. previous month with clean visual indicators.
+- **🏆 Top Platforms Section:** Revenue breakdown across platforms with growth rate percentages.
+- **🎯 Fully Responsive Design:** Adapts flawlessly to all screen sizes using mobile-first CSS.
 
 ## 🚀 Getting Started
 
-### Clone Repository
-```bash
-git clone https://github.com/Okeke-Divine/Geegpay-Front-End-Challenge.git
-cd Geegpay-Front-End-Challenge
-```
+### Prerequisites
+A modern web browser. No build tools required.
 
-### Open Locally
-Simply open `index.html` in your browser to view the dashboard.
+### Local Development
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Okeke-Divine/Geegpay-Front-End-Challenge.git
+    cd Geegpay-Front-End-Challenge
+    ```
 
----
+2.  **Open in your browser:**
+    Double-click the `index.html` file or serve it with a local server:
 
-## 📋 What I learnt
-- Translating a **Figma design into responsive front-end code**
-- Mastery of **vanilla HTML, CSS, and JavaScript**
-- Dashboard layout structuring with **Flexbox and Grid**
-- Building reusable UI components
-- Creating **interactive and data-driven UIs** without frameworks
+## 🧠 Knowledge Demonstrated
+- **Figma-to-Code Translation:** Ability to precisely implement design specs (spacing, typography, colors).
+- **Advanced CSS Layouts:** Mastery of Flexbox and CSS Grid for complex responsive layouts.
+- **Vanilla JavaScript DOM Manipulation:** Implementing interactivity without jQuery or frameworks.
+- **Responsive Web Design:** Mobile-first approaches and cross-device compatibility.
+- **UI/UX Best Practices:** Creating intuitive, user-friendly data visualization interfaces.
+- **Performance Optimization:** Writing efficient, minimal code for fast loading.
 
----
-
-## 🎯 About the Challenge
-This project was part of the **Geegpay UI Design Competition**, where participants were tasked with converting a provided Figma design into a functional, pixel-perfect dashboard.  
-
-It was a great opportunity to test my **design-to-code skills** and showcase my ability to build professional dashboards **without relying on frameworks**.
-
----
-
-## 📄 License
-This project is licensed under the MIT License.
+## 📋 Project Context
+This project was completed as part of the **Geegpay UI Design Competition**, which challenged developers to convert a provided Figma design into a functional web application using only core web technologies.
 
 ---
 
-👨‍💻 Built with ❤️ by [Okeke Divine](https://github.com/Okeke-Divine)
+**Built by [Divine-Vessel](https://github.com/Okeke-Divine)**
