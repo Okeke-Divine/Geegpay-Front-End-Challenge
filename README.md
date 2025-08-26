@@ -2,7 +2,7 @@
 
 A **Figma-to-Code Front-End Dashboard** built with **HTML, CSS, and JavaScript** for the Geegpay UI Design Competition.
 
-![Dashboard Preview](./assets/dashboard-preview.png)
+![Dashboard Preview](./assets/images/dashboard.png)
 
 ---
 
