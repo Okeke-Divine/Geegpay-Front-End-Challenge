@@ -2,6 +2,10 @@
 
 > **A Pixel-Perfect, Dashboard Built from a Figma Design.**
 
+![Dashboard Preview](./assets/images/dashboard.png)
+
+---
+
 ## 🚀 Live Demo
 👉 **[View Live Dashboard](https://geegpay-dashboard.okekedivine.com.ng/)**
 
